@@ -1,5 +1,28 @@
 <div class="col-md-4">
-
+	<?php
+    if(!Session::isSessionStart()){
+    ?>
+    <!--LOGIN FORM-->
+    <div class="card my-4">
+        <h5 class="card-header">Login</h5>
+        <div class="card-body">
+            <form action="<?php echo BASEURL."routing"?>" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                </div>
+                <input type="submit" class="btn btn-primary" name="login" id="login" value="Login">
+            </form>
+        </div>
+    </div>
+    <!--LOGIN FORM-->
+    <?php
+    }
+    ?>
 	<!-- Search Widget -->
 	<div class="card my-4">
 		<h5 class="card-header">Search</h5>
@@ -15,7 +38,7 @@
 		</div>
 	</div>
 	<?php 
-	include_once(BASEURL."classes/Database.class.php");
+	include_once("classes/Database.class.php");
 	$db = new Database();
 	$connection = $db->getConnection();
 	$categories = new Categories($connection);

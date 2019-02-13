@@ -15,6 +15,14 @@ class Categories extends Queries{
 	public function readAllCategories(){
 		return parent::readData($this->table);
 	}
+	
+	public function createCategory($data){
+//		return parent::
+	}
+	public function getCategoryById($category_id){
+		$res = parent::readData($this->table, "category_id = $category_id");
+		return $res[0];
+	}
 }
 
 ?>

@@ -1,5 +1,8 @@
 
-<?php include_once('includes/bootstrap.php');?>
+<?php 
+ob_start();
+include_once('includes/bootstrap.php');
+?>
 
 <!DOCTYPE html>
 

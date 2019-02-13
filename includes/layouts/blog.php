@@ -63,10 +63,10 @@ NOPOST;
 	<?php if(count($result) != 0){?>
 	<ul class="pagination justify-content-center mb-4">
 		<li class="page-item">
-			<a class="page-link" href="#">&larr; Older</a>
+			<a class="page-link" href="#">&larr; Previous</a>
 		</li>
 		<li class="page-item <?php if(count($result) <= 3){echo disabled;}?>">
-			<a class="page-link" href="#">Newer &rarr;</a>
+			<a class="page-link" href="#">Next &rarr;</a>
 		</li>
 	</ul>
 	<?php } ?>

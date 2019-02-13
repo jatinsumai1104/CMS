@@ -1,6 +1,13 @@
 RewriteEngine On
 RewriteRule ^index$ index.php
+RewriteRule ^index/([0-9]+)$ index.php?page_no=$1
 RewriteRule ^category/([0-9]+)$ index.php?category_id=$1
 RewriteRule ^tags/([a-zA-Z0-9]+)$ index.php?tag=$1
 RewriteRule ^author/([0-9]+)$ index.php?author_id=$1
 RewriteRule ^post/([0-9]+)$ post.php?post_id=$1
+RewriteRule ^routing$ helper/routing.php
+RewriteRule ^admin/$ admin/dashboard.php
+RewriteRule ^admin/posts$ admin/posts.php
+RewriteRule ^admin/posts/([a-zA-Z0-9]+)$ admin/posts.php?required_page=$1
+RewriteRule ^admin/edit_posts$ admin/includes/admin-routing.php
+RewriteRule ^admin/posts/([a-zA-Z0-9]+)/([0-9]+)$ admin/posts.php?required_page=$1&page_no=$2

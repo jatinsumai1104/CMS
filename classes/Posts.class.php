@@ -16,12 +16,20 @@ class Posts extends Queries{
 	
 	//get a specific post whose post_id is given id
 	public function readPostByPostId($post_id){
-		$row = parent::readData($this->table, 'post_id', $post_id);
+		$row = parent::readData($this->table, 'post_id = '.$post_id);
 		return $row[0];
 	}
 	
 	public function readAllPostsOfCategory($category_id){
-		return parent::readData($this->table, 'post_category_id', $category_id);
+		return parent::readData($this->table, 'post_category_id = '.$category_id);
+	}
+	
+	public function createPost($data){
+		return parent::addData($this->table, $data);
+	}
+	
+	public function updatePost($data){
+		return parent::updateData($this->table, $data);
 	}
 	
 	public function readAllPostsBySearch($keywords){
@@ -36,8 +44,8 @@ class Posts extends Queries{
 		return parent::execteQuery($query);
 	}
 	
-	public function readAllPostsOfAuthor($post_author_id){
-		return parent::readData($this->table, 'post_author_id', $post_author_id);
+	public function readAllPostsOfAuthor($post_author_id, $start=0, $end=0){
+		return parent::readData($this->table, 'post_author_id = '.$post_author_id, $start, $end);
 	}
 	
 	public function getAuthorName($post_author_id){
@@ -46,6 +54,18 @@ class Posts extends Queries{
 		return $result[0]['author_name'];
 	}
 	
+	public function setPostAsPublished($post_id){
+		$data = array("post_status"=>"published");
+		return parent::updateData($this->table, $data, "post_id = ".$post_id);
+	}
+	
+	public function setPostAsDraft($post_id){
+		$data = array("post_status"=>"draft");
+		return parent::updateData($this->table, $data, "post_id = ".$post_id);
+	}
+	public function deletePost($post_id){
+		parent::deleteData($this->table, "post_id = ".$post_id);
+	}
 }
 
 ?>
