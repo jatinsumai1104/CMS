@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo BASEURL;?>css/style.css" rel="stylesheet">
-
+	<link rel="shortcut icon" href="<?php echo BASEURL;?>images/logo.png" />
   </head>
 
   <body>

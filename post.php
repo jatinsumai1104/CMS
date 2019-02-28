@@ -15,13 +15,14 @@ include_once('includes/bootstrap.php');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blog Post - Start Bootstrap Template</title>
+    <title>Blog Post</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo BASEURL;?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="<?php echo BASEURL;?>css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="<?php echo BASEURL;?>images/logo.png" />
 
   </head>
 

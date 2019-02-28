@@ -12,8 +12,8 @@ Session::start_session();
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
-
-	<title>SB Admin - Blank Page</title>
+	<link rel="shortcut icon" href="<?php echo BASEURL;?>images/logo.png" />
+	<title>Blog</title>
 
 	<!-- Bootstrap core CSS-->
 	<link href="<?php echo BASEURL;?>admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@ Session::start_session();
 
 	<!-- Custom styles for this template-->
 	<link href="<?php echo BASEURL;?>admin/css/sb-admin.css" rel="stylesheet">
-
+	
 	<script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
 	<script>tinymce.init({ selector:'textarea' });</script>
 

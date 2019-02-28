@@ -11,18 +11,19 @@ class Authentication extends Queries{
 	}
 	
 	public function login($username, $password){
-		$result = parent::readData($this->table, 'username', $username);
+		$result = parent::readData($this->table, "username = '".$username."'");
 		if(password_verify($password, $result[0]['password'])){
 			Session::startSession($result[0]['user_id']);
 			Helper::redirect("admin");
 			return true;
 		}else{
+			echo "Incorrect Password";
 			return false;
 		}
 	}
 	
-	function logout(){
-		Session::destroySession();
+	public function logout(){
+		return Session::destroySession();
 	}
 }
 

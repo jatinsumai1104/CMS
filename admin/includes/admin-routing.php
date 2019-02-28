@@ -1,18 +1,16 @@
 <?php
-	
-	
+include_once ("../../includes/constants.php");	
+spl_autoload_register(function ($class_name) {
+	include_once("../../classes/".$class_name . '.class.php');
+});
+$db = new Database();
+$conn = $db->getConnection();
+$post = new Posts($conn);	
+$auth = new Authentication($conn);
 	if(isset($_REQUEST['publish_post'])){
-		$db = new Database();
-		$conn = $db->getConnection();
-		$post = new Posts($conn);	
-		include_once ("../../includes/constants.php");	
-		spl_autoload_register(function ($class_name) {
-			include_once("../../classes/".$class_name . '.class.php');
-		});
 		$keys = array("post_category_id", "post_title", "post_body", "post_tags", "post_status");
 		
 		$date = date('Y-m-d');
-		session_start();
 		if(isset($_SESSION['user_id'])){
 			$post_author_id = $_SESSION['user_id'];
 		}else{
@@ -50,8 +48,9 @@
 		});
 		$post_id = $_REQUEST['post_id'];
 		echo $post_id;
-	}if(isset($_REQUEST[''])){
-		
+	}if(isset($_REQUEST['logout'])){
+		$auth->logout();
+		header("Location: ".BASEURL);
 	}else{
 		echo "Some Issue!!";
 	}

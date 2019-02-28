@@ -13,7 +13,7 @@ Session::start_session();
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>SB Admin - Dashboard</title>
+	<title>BLog</title>
 
 	<!-- Bootstrap core CSS-->
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,7 @@ Session::start_session();
 
 	<!-- Custom styles for this template-->
 	<link href="css/sb-admin.css" rel="stylesheet">
+	<link rel="shortcut icon" href="<?php echo BASEURL;?>images/logo.png" />
 
 </head>
 
@@ -50,7 +51,7 @@ Session::start_session();
 				<!-- Breadcrumbs-->
 				<?php 
 					include_once('includes/layouts/admin-breadcrumbs.php');
-				?>>
+				?>
 
 				<!-- Icon Cards-->
 				<div class="row">
@@ -153,10 +154,12 @@ Session::start_session();
 						<span aria-hidden="true">×</span>
 					</button>
 				</div>
-				<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+				<div class="modal-body">Select "LogOut" below if you are ready to end your current session.</div>
 				<div class="modal-footer">
-					<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
+					<form action="<?php echo BASEURL."admin/edit_posts";?>" method="POST">
+						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+						<button class="btn btn-primary" type="submit" name="logout">Logout</button>
+					</form>
 				</div>
 			</div>
 		</div>
