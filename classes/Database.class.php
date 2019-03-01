@@ -5,7 +5,7 @@ class Database{
 	private $host = "localhost";
 	private $user = "Jatin Sumai";
 	private $password = "jatin@99";
-	private $dbname = "cms_degree";
+	private $dbname = "cms";
 
     /**
      * Database constructor.
