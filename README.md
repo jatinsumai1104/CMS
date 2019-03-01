@@ -7,7 +7,8 @@ Content Management System based on basic oop based php
 ![ruziywif2y](https://user-images.githubusercontent.com/43413309/53633592-f4d85280-3c3d-11e9-86b7-ea065f75893e.gif)
 
 ### CMS Admin Panel
-Coming Soon!!
+![cms_admin_panel](https://user-images.githubusercontent.com/43413309/53633943-e2124d80-3c3e-11e9-83dd-7152c0b4d98d.gif)
+
 
 
 ## Docs
