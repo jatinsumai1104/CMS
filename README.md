@@ -3,7 +3,11 @@ Content Management System based on basic oop based php
 
 ## Preview
 
-Will be added soon!!
+### CMS Blog Page
+![ruziywif2y](https://user-images.githubusercontent.com/43413309/53633592-f4d85280-3c3d-11e9-86b7-ea065f75893e.gif)
+
+### CMS Admin Panel
+Coming Soon!!
 
 
 ## Docs
