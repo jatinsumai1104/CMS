@@ -32,6 +32,10 @@ class Posts extends Queries{
 		return parent::updateData($this->table, $data);
 	}
 	
+	public function updatePostById($data, $post_id){
+		return parent::updateData($this->table, $data, "post_id = ".$post_id);
+	}
+	
 	public function readAllPostsBySearch($keywords){
 		$query = "SELECT post.post_id, post.post_author_id, post.post_category_id, post.post_title, post.post_body, post.post_tags, post.post_image_extension, post.post_date, post.post_status, post.post_status, post.created_at, post.updated_at, CONCAT(member.member_first_name, CONCAT(\" \", member.member_last_name)) as post_author FROM post, member WHERE (post.post_author_id = member.member_id) and (member.member_first_name like '%{$keywords}%' or member.member_first_name like '%{$keywords}%' or post.post_tags like '%{$keywords}%' or post.post_title like '%{$keywords}%' or post.post_body like '%{$keywords}%' or CONCAT(member.member_first_name, CONCAT(\" \", member.member_last_name)) like '%{$keywords}%') and post.is_deleted = 0";
 		

@@ -38,6 +38,20 @@ if(isset($_REQUEST['publish_post'])){
 		die("Error While Inserting Post!");
 	}
 
+}else if(isset($_REQUEST['update_post'])){
+	
+	$db = new Database();
+	$conn = $db->getConnection();
+	$post = new Posts($conn);	
+	include_once ("../../includes/constants.php");	
+	spl_autoload_register(function ($class_name) {
+		include_once("../../../classes/".$class_name . '.class.php');
+	});
+	$post_id = $_REQUEST['post_id'];
+	unset($_REQUEST['update_post']);
+	$post->updatePostById($_REQUEST, $post_id);
+	$baseurl = BASEURL;
+	header("Location: {$baseurl}admin/posts/managePosts/1");
 }else if(isset($_REQUEST['deleteBtn'])){
 	$db = new Database();
 	$conn = $db->getConnection();
@@ -63,6 +77,16 @@ if(isset($_REQUEST['publish_post'])){
 	$post->toggleStatus($post_id);
 	$baseurl = BASEURL;
 	header("Location: {$baseurl}admin/posts/managePosts/1");
+}else if(isset($_REQUEST['editBtn'])){	
+	include_once ("../../includes/constants.php");	
+	spl_autoload_register(function ($class_name) {
+		include_once("../../../classes/".$class_name . '.class.php');
+	});
+	$post_id = $_REQUEST['post_id'];
+//	echo $post_id;
+//	$post->deletePost($post_id);
+	$baseurl = BASEURL;
+	header("Location: {$baseurl}admin/posts/addPost/$post_id");
 }else if(isset($_REQUEST['logout'])){
 	$auth->logout();
 	header("Location: ".BASEURL);

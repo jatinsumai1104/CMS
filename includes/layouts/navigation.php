@@ -1,5 +1,5 @@
 <?php 
-//Session::start_session();
+Session::start_session();
 //$_SESSION['user_id'] = 1;
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">

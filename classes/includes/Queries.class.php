@@ -54,7 +54,7 @@ class Queries{
 			$i++;
 		}
 		$sql = "update $table set $columnValueSet where $condition";
-		
+		echo $sql;
 		$this->execteQuery($sql);
 	}
 	

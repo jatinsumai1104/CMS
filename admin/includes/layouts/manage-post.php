@@ -43,7 +43,7 @@ require_once("includes/admin-bootstrap.php");
 				<td>{$result[$i]['post_tags']}</td>
 				<td name='post_status'>{$result[$i]['post_status']}</td>
 				<td>{$result[$i]['post_date']}</td>
-				<td><button class='edit fa fa-pen btn btn-info' id='{$result[$i]['post_id']}' data-toggle='modal' data-target='#EditModal'> Edit</button></td>
+				<td><button class='edit fa fa-pen btn btn-info' id='{$result[$i]['post_id']}' data-toggle='modal' data-target='#editModal'  name='editBtn'> Edit</button></td>
 				<td><button class='delete fa fa-trash btn btn-danger' id='{$result[$i]['post_id']}' data-toggle='modal' data-target='#deleteModal' name='deleteBtn'> DELETE</button></td>
 				<td><button class='toggle fa fa-toggle-off btn btn-success' id='{$result[$i]['post_id']}' data-toggle='modal' data-target='#statusToggleModel' name='toggleBtn'> Toggle Status</button></td>
 			</tr>
@@ -104,7 +104,7 @@ TAG;
 							<div class="modal-footer">
 								<form action="../../edit_posts" method="POST">
 									<input type="hidden" id="editID" name="post_id">
-									<button type="submit" class="btn red" name="deleteBtn">YES</button>
+									<button type="submit" class="btn red" name="editBtn">YES</button>
 									<button type="button" class="btn blue" data-dismiss="modal">NO</button>
 								</form>
 							</div>
