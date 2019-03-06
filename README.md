@@ -1,6 +1,11 @@
 # CMS
 Content Management System based on basic oop based php
 
+## Description
+A Blogging Site Lets user Publish,Draft Posts, Admin Controls the Posts to be 
+Published,can Remove a Post.Provides different Categories to Post under.
+Back end - PHP(OOP) ,MySQL . Front end - HTML ,CSS, Jquery, Bootstrap.
+
 ## Preview
 
 ### CMS Blog Page
