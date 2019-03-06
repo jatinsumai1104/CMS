@@ -25,6 +25,7 @@
 		<h1 class="my-4">Posts</h1>
 HEAD;
 		for($i = 0; $i < count($result); $i++){
+			if($result[$i]['post_status'] == "published"){
 	?>
 	
 	<div class="card mb-4">
@@ -33,7 +34,13 @@ HEAD;
 			<h2 class="card-title"><?php echo $result[$i]['post_title']; ?></h2>
 			<p class="card-text"><?php
 				$post_body = $result[$i]['post_body']; 
-				echo substr($post_body, 0, strrpos(substr($post_body, 0, 300), " "))."...";	
+//				echo substr($post_body, 300, 303) . " hello jatin    ";
+//				if(substr($post_body, 300, 303) != "</p>" || substr($post_body, 300, 303) != "</div>"){
+					echo substr($post_body, 0, strrpos(substr($post_body, 0, 300), " "))."...";		
+//				}else{
+//					echo substr($post_body, 0, strrpos(substr($post_body, 0, 303), " "))."...";	
+//				}
+				
 			?></p>
 			<a href="<?php echo BASEURL."post/".$result[$i]['post_id'];?>" class="btn btn-primary">Read More &rarr;</a>
 			<?php 
@@ -52,7 +59,7 @@ TAG;
 			<a href="<?php echo BASEURL."author/{$result[$i]['post_author_id']}"?>"><?php echo $post->getAuthorName($result[$i]['post_author_id']); ?></a>
 		</div>
 	</div>
-	<?php }
+	<?php }}
 	}else{
 		$URL = BASEURL;
 		echo<<<NOPOST

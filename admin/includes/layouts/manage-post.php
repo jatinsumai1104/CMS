@@ -1,6 +1,6 @@
 <?php 
 require_once("includes/admin-bootstrap.php");
-Session::start_session();
+//Session::start_session();
 ?>
 <div class="table-responsive">
 	<table class="table" id="author_posts">
@@ -41,11 +41,11 @@ Session::start_session();
 				<td>{$result[$i]['post_title']}</td>
 				<td>{$result[$i]['post_body']}</td>
 				<td>{$result[$i]['post_tags']}</td>
-				<td>{$result[$i]['post_status']}</td>
+				<td name='post_status'>{$result[$i]['post_status']}</td>
 				<td>{$result[$i]['post_date']}</td>
 				<td><button class='edit fa fa-pen btn btn-info' id='{$result[$i]['post_id']}' data-toggle='modal' data-target='#EditModal'> Edit</button></td>
-				<td><button class='delete fa fa-trash btn btn-danger' id='{$result[$i]['post_id']}' data-toggle='modal' data-target='#deleteModal'> DELETE</button></td>
-				<td><button class='edit fa fa-toggle-off btn btn-success' id='{$result[$i]['post_id']}' data-toggle='modal' data-target='#deleteModal'> Toggle Status</button></td>
+				<td><button class='delete fa fa-trash btn btn-danger' id='{$result[$i]['post_id']}' data-toggle='modal' data-target='#deleteModal' name='deleteBtn'> DELETE</button></td>
+				<td><button class='toggle fa fa-toggle-off btn btn-success' id='{$result[$i]['post_id']}' data-toggle='modal' data-target='#statusToggleModel' name='toggleBtn'> Toggle Status</button></td>
 			</tr>
 TAG;
 		}
@@ -74,7 +74,7 @@ TAG;
 							</div>
 							<div class="modal-footer">
 								<form action="../../edit_posts" method="POST">
-									<input type="hidden" id="recordID" name="post_id">
+									<input type="hidden" id="deleteID" name="post_id">
 									<button type="submit" class="btn red" name="deleteBtn">YES</button>
 									<button type="button" class="btn blue" data-dismiss="modal">NO</button>
 								</form>
@@ -103,7 +103,7 @@ TAG;
 							</div>
 							<div class="modal-footer">
 								<form action="../../edit_posts" method="POST">
-									<input type="hidden" id="recordID" name="post_id">
+									<input type="hidden" id="editID" name="post_id">
 									<button type="submit" class="btn red" name="deleteBtn">YES</button>
 									<button type="button" class="btn blue" data-dismiss="modal">NO</button>
 								</form>
@@ -111,36 +111,36 @@ TAG;
 						</div>
 					</div>
 				</div>
-				<!--END OF DELETE MODAL-->
+				<!--END OF Edit MODAL-->
 
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 <!--					Delete Modal-->
-					<div class="modal fade" id="statusToggleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal fade" id="statusToggleModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Delete??</h5>
+								<h5 class="modal-title" id="exampleModalLabel">Change Status??</h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
 							<div class="modal-body">
-								<p>Are you sure want to delete This Post!!!</p>
+								<p>Are you sure want to change the status of this Post!!!</p>
 							</div>
 							<div class="modal-footer">
 								<form action="../../edit_posts" method="POST">
-									<input type="hidden" id="recordID" name="post_id">
-									<button type="submit" class="btn red" name="deleteBtn">YES</button>
+									<input type="hidden" id="toggleID" name="post_id">
+									<button type="submit" class="btn red" name="toggleBtn">YES</button>
 									<button type="button" class="btn blue" data-dismiss="modal">NO</button>
 								</form>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!--END OF DELETE MODAL-->
+				<!--END OF Status Toggle MODAL-->
 
 				</div>
 			</div>

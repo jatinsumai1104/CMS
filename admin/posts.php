@@ -119,9 +119,17 @@ Session::start_session();
 	<script>
 		var postsTable = $("#author_posts");
 		postsTable.on('click','.delete',function(e){
-         $id = $(this).attr('id');
-         $("#recordID").val($id);
-      });
+			$id = $(this).attr('id');
+			$("#deleteID").val($id);
+		});
+		postsTable.on('click','.edit',function(e){
+			$id = $(this).attr('id');
+			$("#editID").val($id);
+		});
+		postsTable.on('click','.toggle',function(e){
+			$id = $(this).attr('id');
+			$("#toggleID").val($id);
+		});
 	</script>
 
 </body>

@@ -1,6 +1,6 @@
 <?php 
-Session::start_session();
-$_SESSION['user_id'] = 1;
+//Session::start_session();
+//$_SESSION['user_id'] = 1;
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<div class="container">
@@ -10,12 +10,13 @@ $_SESSION['user_id'] = 1;
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
+				<?php if(isset($_SESSION['user_id'])){?>
 				<li class="nav-item active">
-					<a class="nav-link" href="<?php if(isset($_SESSION['user_id'])){
-						echo " admin"; }else{ echo "#" ; }?>">Admin Panel
+					<a class="nav-link" href="<?php $baseurl = BASEURL; echo "{$baseurl}admin";?>">Admin Panel
 						<span class="sr-only">(current)</span>
 					</a>
 				</li>
+				<?php }?>
 			</ul>
 		</div>
 	</div>

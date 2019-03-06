@@ -20,7 +20,7 @@ class Session{
 	}
 	public static function destroySession(){
 		if(self::isSessionStart()){
-			$_SESSION['user_id']= null;
+			unset($_SESSION['user_id']);
 			session_destroy();
 			return 1;
 		}else{

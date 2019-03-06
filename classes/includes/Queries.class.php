@@ -55,14 +55,12 @@ class Queries{
 		}
 		$sql = "update $table set $columnValueSet where $condition";
 		
-		$ps = $this->conn->prepare($sql);
-		
-		$result = $ps->execute($data);
-		if($result){
-			return $result->rowCount();
-		}else{
-			return false;
-		}
+		$this->execteQuery($sql);
+	}
+	
+	public function deleteData($table, $condition){
+		$sql = "update $table set is_deleted = 1 where $condition";
+		$this->execteQuery($sql);
 	}
 }
 

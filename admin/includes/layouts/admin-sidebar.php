@@ -1,6 +1,6 @@
 <?php 
 include_once('includes/admin-bootstrap.php');
-Session::start_session();
+//Session::start_session();
 ?>
 <ul class="sidebar navbar-nav">
 	<li class="nav-item">

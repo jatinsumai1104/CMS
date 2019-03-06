@@ -55,16 +55,30 @@ class Posts extends Queries{
 	}
 	
 	public function setPostAsPublished($post_id){
-		$data = array("post_status"=>"published");
+		$data["post_status"]="published";
 		return parent::updateData($this->table, $data, "post_id = ".$post_id);
 	}
 	
 	public function setPostAsDraft($post_id){
-		$data = array("post_status"=>"draft");
+		$data["post_status"]="draft";
 		return parent::updateData($this->table, $data, "post_id = ".$post_id);
 	}
 	public function deletePost($post_id){
+		
 		parent::deleteData($this->table, "post_id = ".$post_id);
+	}
+	
+	public function getPostStatus($post_id){
+		$rs = $this->readPostByPostId($post_id);
+		return $rs['post_status'];
+	}
+	
+	public function toggleStatus($post_id){
+		if($this->getPostStatus($post_id) == "draft"){
+			$this->setPostAsPublished($post_id);
+		}else{
+			$this->setPostAsDraft($post_id);
+		}
 	}
 }
 
