@@ -34,7 +34,7 @@ No Dependiesces Needed just follow steps!
 
 #### See [Importing MySQL databases and tables using phpMyAdmin](https://youtu.be/jW5lrS6EUPM)
 ```sh
-Database Name should be cms
+Database Name should be cms_degree
 ```
 ```sh
 Database File is Present Inside root/db
