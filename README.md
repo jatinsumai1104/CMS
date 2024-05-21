@@ -2,9 +2,9 @@
 Content Management System based on basic oop based php
 
 ## Description
-A Blogging Site Lets user Publish,Draft Posts, Admin Controls the Posts to be 
-Published,can Remove a Post.Provides different Categories to Post under.
-Back end - PHP(OOP) ,MySQL . Front end - HTML ,CSS, Jquery, Bootstrap.
+A blogging website where users can view, search, and categorize published posts. Implemented an admin panel for users to upload, manage, and update blog posts, including publishing and unpublishing features. Each blog post includes an image section and content area. The platform offers a user-friendly interface with robust content management capabilities.
+
+**Techstack**: PHP (OOP) and MySQL for the backend, and HTML, CSS, jQuery, and Bootstrap for the frontend.
 
 ## Preview
 
@@ -16,10 +16,10 @@ Back end - PHP(OOP) ,MySQL . Front end - HTML ,CSS, Jquery, Bootstrap.
 
 
 
-## Docs
+## Setup
 
 ### Running locally
-No Dependiesces Needed just follow steps!
+No Dependencies needed just follow steps!
 #### Steps: 
 ```sh
 
